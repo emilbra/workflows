@@ -27,6 +27,10 @@ repos:
                         allowed-values: ["true", "false", "on"]
                       comments:
                         min-spaces-from-content: 1
+    - repo: https://github.com/rhysd/actionlint
+      rev: v1.7.10
+      hooks:
+          - id: actionlint
     - repo: https://github.com/bridgecrewio/checkov.git
       rev: "3.2.497" # change to tag or sha
       hooks:
