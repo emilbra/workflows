@@ -1,0 +1,21 @@
+---
+name: Release-please - Automatic Semver compliant tags 🤖🪧
+
+on:
+    push:
+        branches:
+            - master
+
+# these are the permissions required for release-please to do its job
+permissions:
+    contents: write
+    issues: write
+    pull-requests: write
+
+jobs:
+    run-release-please:
+        uses: ./.github/workflows/release_please.yaml
+        with:
+            APP_ID: ${{ vars.APP_ID }}
+        secrets:
+            APP_PRIVATE_KEY: ${{ secrets.APP_PRIVATE_KEY}}

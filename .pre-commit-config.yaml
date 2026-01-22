@@ -1,0 +1,33 @@
+---
+repos:
+    - repo: https://github.com/pre-commit/pre-commit-hooks
+      rev: v6.0.0
+      hooks:
+          - id: check-merge-conflict
+          - id: end-of-file-fixer
+          - id: trailing-whitespace
+            args: ["--markdown-linebreak-ext=md"]
+          - id: check-added-large-files
+          - id: check-yaml
+          - id: check-json
+    - repo: https://github.com/adrienverge/yamllint
+      rev: v1.38.0
+      hooks:
+          - id: yamllint
+            args:
+                - -d
+                - |
+                    extends: default
+                    rules:
+                      line-length:
+                        max: 120
+                        allow-non-breakable-words: true
+                        allow-non-breakable-inline-mappings: true
+                      truthy:
+                        allowed-values: ["true", "false", "on"]
+                      comments:
+                        min-spaces-from-content: 1
+    - repo: https://github.com/bridgecrewio/checkov.git
+      rev: "3.2.497" # change to tag or sha
+      hooks:
+          - id: checkov
