@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.2.0](https://github.com/emilbra/workflows/compare/v0.1.0...v0.2.0) (2026-01-23)
+
+
+### Features
+
+* include multiplatform support in this build workflow ([a5a4c59](https://github.com/emilbra/workflows/commit/a5a4c593dcedf112f89886586e1f1266b5e00e46))
+
+
+### Bug Fixes
+
+* dont set nondefault context ([3253bf0](https://github.com/emilbra/workflows/commit/3253bf0dce8a9a09bcd4dc9622f68b325258e38b))
+
 ## 0.1.0 (2026-01-22)
 
 
