@@ -6,6 +6,7 @@ on:
 
 permissions:
   packages: write
+  contents: read
 
 jobs:
   build_container:
@@ -14,6 +15,8 @@ jobs:
       # Omitting quemu - but would have it if we needed to build multiplatform
       - name: Checkout repository
         uses: actions/checkout@v6
+        with:
+          repository: ${{ github.event.repository.full_name }}
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v3
         with:
